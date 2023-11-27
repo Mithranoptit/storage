@@ -133,6 +133,7 @@ echo -e "NOTE:- If any of the above fields are marked as \"blank\" or \"NONE\" o
 that means either there is no value present in the system for these fields, otherwise that value may not be available,
 or suppressed since there was an error in fetching details."
 echo "Script by OPTIT"
+echo "Output File Location in /systate.txt"
 echo "Any Queries Mail at MITHRAN.P@OPTIT.IN"
 echo "-------------------------------------------------End of script------------------------------------------------"
 #Script by Mithran P
