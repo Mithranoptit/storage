@@ -71,7 +71,8 @@ rm -rf SMART.txt
 echo -e "\n\nChecking For Zombie Processes"
 echo -e "$D"
 ps -eo stat|grep -w Z 1>&2 > /dev/null
-echo -e "Number of zombie process on the system are :" $(ps -eo stat|grep -w Z|wc -l)
+if [ $? == 0 ]; then
+  echo -e "Number of zombie process on the system are :" $(ps -eo stat|grep -w Z|wc -l)
   echo -e "\n  Details of each zombie processes found   "
   echo -e "  $D"
   ZPROC=$(ps -eo stat,pid|grep -w Z|awk '{print $2}')
@@ -81,6 +82,7 @@ echo -e "Number of zombie process on the system are :" $(ps -eo stat|grep -w Z|w
 else
  echo -e "No zombie processes found on the system."
 fi
+
 echo -e "\n\nChecking For INode Usage"
 echo -e "$D$D"
 echo -e "( 0-85% = OK/HEALTHY,  85-95% = WARNING,  95-100% = CRITICAL )"
