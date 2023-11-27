@@ -136,7 +136,7 @@ do
     fi
 done
 cat SMART.txt
-rm -rf SMART
+rm -rf SMART.txt
 rm -rf HDDs.log
 COL33=$(echo "$COL33"|sort -k1n)
 paste  <(echo "$COL11") <(echo "$COL33") -d' '|column -t
