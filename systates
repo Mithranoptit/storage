@@ -66,6 +66,8 @@ wget https://raw.githubusercontent.com/Mithranoptit/storage/main/disklife
 chmod 777 disklife
 ./disklife
 rm -rf HDDs.log
+cat SMART.txt
+rm -rf SMART.txt
 echo -e "\n\nChecking For Zombie Processes"
 echo -e "$D"
 ps -eo stat|grep -w Z 1>&2 > /dev/null
