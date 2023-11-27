@@ -65,11 +65,11 @@ paste  <(echo "$COL1") <(echo "$COL3") -d' '|column -t
 wget https://raw.githubusercontent.com/Mithranoptit/storage/main/disklife
 chmod 777 disklife
 ./disklife
+rm -rf HDDs.log
 echo -e "\n\nChecking For Zombie Processes"
 echo -e "$D"
 ps -eo stat|grep -w Z 1>&2 > /dev/null
-if [ $? == 0 ]; then
-  echo -e "Number of zombie process on the system are :" $(ps -eo stat|grep -w Z|wc -l)
+echo -e "Number of zombie process on the system are :" $(ps -eo stat|grep -w Z|wc -l)
   echo -e "\n  Details of each zombie processes found   "
   echo -e "  $D"
   ZPROC=$(ps -eo stat,pid|grep -w Z|awk '{print $2}')
