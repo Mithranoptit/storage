@@ -7,9 +7,9 @@ declare -A address
 
 
 
-if [ -f systates.txt ]
+if [ -f SMART.txt ]
 then
-    rm systates.txt
+    rm SMART.txt
 fi
 
 if [ -f HDDs.log ]
@@ -37,8 +37,8 @@ for e in "${array[@]}"
 do
     if [[ $e =~ /dev/sd* || $e =~ /dev/hd* ]]
         then
-            echo "smartctl -i -A $e" >> /systates.txt
-            smartctl -i -A $e >> /systates.txt # Run smartctl into all disks that the host have
+            echo "smartctl -i -A $e" >> SMART.txt
+            smartctl -i -A $e >> SMART.txt # Run smartctl into all disks that the host have
     fi
 done
 exit $?   # In this case, exit code = 99, since that is function return.
