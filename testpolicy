@@ -1,0 +1,16 @@
+#!/bin/bash
+date >> policy.log
+#usb
+rm -rf /etc/modprobe.d/usb-storage.conf
+echo "install usb-storage /bin/true" >> /etc/modprobe.d/usb-storage.conf
+echo "Usb blocked" >> policy.log
+#desktop
+ls /home/ >> users
+#chmod o-rx
+data="users"
+while read data
+do
+chmod 700 /home/$data/Desktop
+done < $data
+rm -rf users
+echo "Wallpaper blocked" >> policy.log
