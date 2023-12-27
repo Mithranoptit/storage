@@ -170,6 +170,9 @@ ps -eo pcpu,pid,ppid,user,stat,args --sort=-pcpu|grep -v $$|head -6|sed 's/$/\n/
 echo -e "NOTE:- If any of the above fields are marked as \"blank\" or \"NONE\" or \"UNKNOWN\" or \"Not Available\" or \"Not Specified\"
 that means either there is no value present in the system for these fields, otherwise that value may not be available,
 or suppressed since there was an error in fetching details."
+echo " List of Services"
+echo #############################################################################################################################
+systemctl --type=service --state=running
 rm -rf disklife
 rm -rf systates
 echo "Script by OPTIT"
