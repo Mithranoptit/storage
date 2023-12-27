@@ -114,8 +114,8 @@ if [ -f HDDs.log ]
 then
     rm HDDs.log
 fi
-smartctl --scan | awk '{print $1}' >> HDDs.log
-lspci | grep -i raid >> HDDs.log
+#smartctl --scan | awk '{print $1}' >> HDDs.log
+#lspci | grep -i raid >> HDDs.log
 getArray ()
 {
     i=0
