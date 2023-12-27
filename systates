@@ -135,9 +135,9 @@ do
             smartctl -i -A $e >> SMART.txt # Run smartctl into all disks that the host have
     fi
 done
-cat SMART.txt
-rm -rf SMART.txt
-rm -rf HDDs.log
+#cat SMART.txt
+#rm -rf SMART.txt
+#rm -rf HDDs.log
 COL33=$(echo "$COL33"|sort -k1n)
 paste  <(echo "$COL11") <(echo "$COL33") -d' '|column -t
 echo -e "\n\nChecking SWAP Details"
